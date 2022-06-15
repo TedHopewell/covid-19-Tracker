@@ -1,0 +1,26 @@
+
+
+.globalStats
+{
+  display: flex;
+  justify-content: space-around;
+  background-color: #86c6f4;
+  color:white;
+  height: 200px;
+  padding-top: 10%;
+
+}
+
+table{
+  border-collapse: collapse;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 4%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
