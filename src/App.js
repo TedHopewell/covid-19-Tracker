@@ -4,13 +4,13 @@ import React, {useEffect, useState} from 'react';
 import './App.css';
 import GlobalStats from './components/global';
 import CountriesStats from './components/countriesStats'
-
+import Search from './components/search';
 
 function App() {
 
 
   const [globalStats, setglobalStats] = useState('')
-  const [countriesStats, setCountriesStats] = useState("");
+  const [countriesStats, setCountriesStats] = useState([]);
 
   useEffect(()=>{
     
@@ -23,10 +23,25 @@ function App() {
 
 
   } , [])
+
+  const searchCountry = ((text)=>{
+
+    let value = text.toLowerCase();
+
+    let result = [];
+
+    result = countriesStats.filter((countries)=>{
+
+      return countries.Country.toLowerCase().indexOf(value) !== -1
+    });
+    setCountriesStats(result);
+
+  })
   
   return (
     <div className="App">
         <GlobalStats  global = {globalStats}/>
+        <Search search = {searchCountry}/>
         <CountriesStats countries = {countriesStats}/>
     </div>
   );
